@@ -56,7 +56,7 @@ const Header = () => {
     <div className="absolute  w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between ">
       <img className="w-44 " src={LOGO} alt="logo" />
       <div className="flex p-2">
-        { showGpt && (<select
+        { user && showGpt && (<select
           className="p-2 m-2 bg-gray-900 text-white "
           onClick={handleLanguageChange}
         >
@@ -66,17 +66,17 @@ const Header = () => {
             </option>
           ))}
         </select>)}
-         {<><button 
+         {user && <button 
           className="py-2 px-4 my-2 mx-4 bg-purple-800 text-white rounded-lg"
           onClick={handleGptSearchClick}
         >
            { showGpt? "HomePage":"GPT Search"}
-        </button>
+        </button>}
         <img className="w-12 h-12 " alt="usericon" src={user?.photoURL} />
-        <button onClick={handleSignOut} className="font-bold text-white">
+        {user && <button onClick={handleSignOut} className="font-bold text-white">
           SignOut
-        </button>
-        </>}
+        </button>}
+        
       </div>
     </div>
   );

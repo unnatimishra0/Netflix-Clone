@@ -4,8 +4,7 @@ const userSlice=createSlice({
     name:'user',
     initialState: {
         addUser:null,
-        removeUser:null,
-        isLogin:'false'
+        removeUser:null
     },
     reducers:{
         addUser:(state,action)=> {
@@ -14,11 +13,9 @@ const userSlice=createSlice({
         removeUser:(state,action)=>{
             return null;
         },
-        isUserLogin:(state,action)=>{
-            state.isLogin=!state.isLogin;
-        }
+        
     },
 
 })
-export const{addUser,removeUser,isUserLogin}=userSlice.actions
+export const{addUser,removeUser}=userSlice.actions
 export default userSlice.reducer;
